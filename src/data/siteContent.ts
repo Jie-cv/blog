@@ -6,7 +6,7 @@ export const siteContent: SiteContent = {
     title: '你好，我是赵捷。',
     subtitle: '这里是我的个人博客，也是我记录成长、技术和实习经历的地方。',
     intro:
-      '目前就读于东华理工大学，正在持续深耕前端开发。我希望把学习、项目、实习和阶段性的思考，慢慢沉淀成真正属于自己的作品。',
+      '目前就读于东华理工大学,27届正在持续深耕前端开发。我希望把学习、项目、实习和阶段性的思考，慢慢沉淀成真正属于自己的作品。',
     avatarSrc: '/avatar.jpg',
     links: [
       { label: '查看博客', href: '#thoughts-blog' },
@@ -21,7 +21,6 @@ export const siteContent: SiteContent = {
       { label: 'GitHub', value: 'Jie-cv', href: 'https://github.com/Jie-cv', icon: 'Github' },
     ],
     metrics: [
-      { label: '当前阶段', value: '大三', icon: 'BookOpen' },
       { label: '学习起点', value: '2025-02-11', icon: 'Rocket' },
       { label: '博客定位', value: '成长 / 技术 / 实习记录', icon: 'PenTool' },
     ],

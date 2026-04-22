@@ -1,5 +1,6 @@
 .section {
   width: 100%;
+  min-width: 0;
 }
 
 .marqueeContainer {
@@ -27,16 +28,16 @@
 }
 
 .track1 {
-  animation: marquee 30s linear infinite;
+  animation: marquee 50s linear infinite;
 }
 
 .track2 {
-  animation: marquee-reverse 35s linear infinite;
+  animation: marquee-reverse 65s linear infinite;
   transform: translateX(-50%);
 }
 
 .track3 {
-  animation: marquee 25s linear infinite;
+  animation: marquee 45s linear infinite;
 }
 
 .marqueeTrack:hover {
