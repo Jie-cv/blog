@@ -1,0 +1,46 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 0.5px, transparent 0.5px);
+  background-size: 12px 12px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 85%);
+}
+
+.glowA,
+.glowB {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.42;
+}
+
+.glowA {
+  width: 360px;
+  height: 360px;
+  top: 80px;
+  left: -120px;
+  background: rgba(83, 166, 255, 0.26);
+}
+
+.glowB {
+  width: 320px;
+  height: 320px;
+  top: 420px;
+  right: -80px;
+  background: rgba(122, 125, 255, 0.22);
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0;
+}

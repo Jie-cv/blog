@@ -1,0 +1,158 @@
+.section {
+  width: min(100% - 32px, var(--container-width));
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 48px;
+  align-items: center;
+  padding: 80px 0 48px;
+}
+
+.copy {
+  display: grid;
+  gap: 20px;
+}
+
+.eyebrow,
+.title,
+.subtitle,
+.actions,
+.panel {
+  opacity: 0;
+}
+
+.eyebrow {
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.78rem;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 5.75rem);
+  line-height: 0.96;
+  max-width: 9ch;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 640px;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.linkPrimary,
+.linkSecondary {
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 180, 255, 0.22);
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+
+.linkPrimary {
+  background: linear-gradient(135deg, rgba(83, 166, 255, 0.95), rgba(122, 125, 255, 0.95));
+  color: #ffffff;
+  box-shadow: 0 16px 30px rgba(83, 166, 255, 0.28);
+}
+
+.linkSecondary {
+  background: rgba(10, 22, 40, 0.72);
+}
+
+.linkPrimary:hover,
+.linkSecondary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(125, 180, 255, 0.5);
+}
+
+.panel {
+  min-height: 420px;
+  padding: 28px;
+  display: grid;
+  align-content: space-between;
+}
+
+.metrics {
+  display: grid;
+  gap: 18px;
+}
+
+.metric {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metricLabel {
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+}
+
+.metricValue {
+  font-size: 1.05rem;
+}
+
+.orbit {
+  justify-self: end;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1px solid rgba(83, 166, 255, 0.28);
+  box-shadow: inset 0 0 40px rgba(83, 166, 255, 0.12), 0 0 80px rgba(83, 166, 255, 0.08);
+  position: relative;
+}
+
+.orbit::before,
+.orbit::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.orbit::before {
+  inset: 24px;
+  border: 1px solid rgba(122, 125, 255, 0.22);
+}
+
+.orbit::after {
+  width: 18px;
+  height: 18px;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #53a6ff, #7a7dff);
+  box-shadow: 0 0 24px rgba(83, 166, 255, 0.5);
+}
+
+@media (max-width: 900px) {
+  .section {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 120px;
+  }
+
+  .title {
+    max-width: none;
+  }
+
+  .panel {
+    min-height: auto;
+  }
+
+  .orbit {
+    justify-self: center;
+    margin-top: 24px;
+  }
+}

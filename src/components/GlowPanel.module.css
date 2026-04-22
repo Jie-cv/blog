@@ -1,0 +1,24 @@
+.panel {
+  position: relative;
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(10, 21, 38, 0.9), rgba(9, 17, 31, 0.72));
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+}
+
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(83, 166, 255, 0.18), transparent 40%, transparent 60%, rgba(122, 125, 255, 0.16));
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.panel > * {
+  position: relative;
+  z-index: 1;
+}

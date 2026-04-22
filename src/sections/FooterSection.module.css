@@ -1,0 +1,30 @@
+.footer {
+  width: min(100% - 32px, var(--container-width));
+  margin: 0 auto;
+  padding: 120px 0 80px;
+}
+
+.panel {
+  padding: 32px;
+  display: grid;
+  gap: 20px;
+}
+
+.quote {
+  margin: 0;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.link {
+  color: var(--text-secondary);
+}
+
+.link:hover {
+  color: var(--text-primary);
+}
