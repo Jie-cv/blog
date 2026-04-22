@@ -1,25 +1,28 @@
 .header {
   display: grid;
-  gap: 12px;
+  gap: 8px;
   max-width: 720px;
 }
 
 .eyebrow {
-  font-size: 0.78rem;
-  letter-spacing: 0.24em;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent-primary);
+  font-weight: 600;
 }
 
 .title {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  line-height: 1.05;
+  font-size: 1.75rem;
+  line-height: 1.2;
   color: #101828;
+  font-weight: 700;
 }
 
 .description {
   margin: 0;
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
 }

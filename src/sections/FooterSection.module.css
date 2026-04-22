@@ -1,7 +1,6 @@
 .footer {
-  width: min(100% - 32px, var(--container-width));
-  margin: 0 auto;
-  padding: 110px 0 80px;
+  width: 100%;
+  padding-bottom: 80px;
 }
 
 .panel {
@@ -12,8 +11,9 @@
 
 .quote {
   margin: 0;
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: 1.25rem;
   color: #101828;
+  font-weight: 500;
 }
 
 .links {

@@ -1,4 +1,3 @@
-import { GlowPanel } from '../components/GlowPanel'
 import { SectionTitle } from '../components/SectionTitle'
 import { useRevealUp } from '../hooks/useRevealUp'
 import type { SiteContent } from '../types/content'
@@ -9,28 +8,45 @@ type SkillsSectionProps = {
   projects: SiteContent['projects']
 }
 
-type ProjectCardProps = {
-  project: SiteContent['projects'][number]
-  delay: number
-}
-
-function ProjectCard({ project, delay }: ProjectCardProps) {
-  const cardRef = useRevealUp<HTMLDivElement>({ delay, y: 46 })
+function SkillTag({ tag, delay }: { tag: SiteContent['skillTags'][number]; delay: number }) {
+  const tagRef = useRevealUp<HTMLSpanElement>({ delay, y: 24 })
 
   return (
-    <div ref={cardRef}>
-      <GlowPanel className={styles.card}>
-        <h3 className={styles.cardTitle}>{project.title}</h3>
-        <p className={styles.cardSummary}>{project.summary}</p>
-        <div className={styles.stackList}>
-          {project.stack.map((item) => (
-            <span key={item} className={styles.stackItem}>
-              {item}
+    <span ref={tagRef} className={styles.tag}>
+      {tag.icon && <img src={tag.icon} alt={tag.label} className={styles.tagIcon} />}
+      {tag.label}
+    </span>
+  )
+}
+
+function ProjectCard({ project, delay }: { project: SiteContent['projects'][number]; delay: number }) {
+  const cardRef = useRevealUp<HTMLDivElement>({ delay, y: 30 })
+
+  return (
+    <div ref={cardRef} className={styles.projectCardWrapper}>
+      <div className={styles.projectCard}>
+        <div className={styles.projectHeader}>
+          <div className={styles.projectIcon}>✦</div>
+          <h3 className={styles.projectTitle}>{project.title}</h3>
+        </div>
+
+        <div className={styles.projectTags}>
+          {project.stack.map((tech) => (
+            <span key={tech} className={styles.projectTag}>
+              {tech}
             </span>
           ))}
         </div>
-        <p className={styles.cardHighlight}>{project.highlight}</p>
-      </GlowPanel>
+
+        <p className={styles.projectDesc}>{project.summary}</p>
+        
+        {project.highlight && (
+          <div className={styles.projectHighlight}>
+            <span className={styles.highlightIcon}>✨</span>
+            <p className={styles.highlightText}>{project.highlight}</p>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
@@ -43,20 +59,19 @@ export function SkillsSection({ tags, projects }: SkillsSectionProps) {
       <div ref={titleRef}>
         <SectionTitle
           eyebrow="Skills & Projects"
-          title="不仅有故事，也有持续搭建的能力"
-          description="这里不是完整简历，而是我当前技术路径和项目表达的缩影。"
+          title="技术栈与实践"
+          description="这些是我在前端学习和实习中积累的技术栈，也是我持续搭建作品的基础。"
         />
       </div>
       <div className={styles.tags}>
-        {tags.map((tag) => (
-          <span key={tag.label} className={styles.tag}>
-            {tag.label}
-          </span>
+        {tags.map((tag, index) => (
+          <SkillTag key={tag.label} tag={tag} delay={index * 0.03} />
         ))}
       </div>
-      <div className={styles.grid}>
+      
+      <div className={styles.projectsGrid}>
         {projects.map((project, index) => (
-          <ProjectCard key={project.title} project={project} delay={index * 0.05} />
+          <ProjectCard key={project.title} project={project} delay={0.2 + index * 0.1} />
         ))}
       </div>
     </section>

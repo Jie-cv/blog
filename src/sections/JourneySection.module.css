@@ -1,7 +1,6 @@
 .section {
-  width: min(100% - 32px, var(--container-width));
-  margin: 0 auto;
-  padding: 110px 0 0;
+  width: 100%;
+  padding-top: 32px;
 }
 
 .timeline {

@@ -15,13 +15,13 @@ type InternshipRowProps = {
 }
 
 function InternshipRow({ item, isLast, delay }: InternshipRowProps) {
-  const itemRef = useRevealUp<HTMLDivElement>({ y: 44, delay, start: 'top 88%' })
+  const itemRef = useRevealUp<HTMLDivElement>({ y: 44, delay, start: 'top 100%' })
 
   return (
-    <div className={styles.row} ref={itemRef}>
+    <div className={styles.item} ref={itemRef}>
       <div className={styles.markerWrap}>
         <span className={styles.marker} />
-        {!isLast ? <span className={styles.line} /> : null}
+        <span className={`${styles.line} ${isLast ? styles.lineLast : ''}`} />
       </div>
       <GlowPanel className={styles.card}>
         <span className={styles.team}>{item.team}</span>
@@ -33,7 +33,7 @@ function InternshipRow({ item, isLast, delay }: InternshipRowProps) {
 }
 
 export function InternshipsSection({ items }: InternshipsSectionProps) {
-  const titleRef = useRevealUp<HTMLDivElement>({ y: 32 })
+  const titleRef = useRevealUp<HTMLDivElement>({ y: 32, start: 'top 100%' })
 
   return (
     <section className={styles.section} id="internships">
