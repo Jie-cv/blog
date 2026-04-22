@@ -129,7 +129,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
               <a
                 key={link.href}
                 className={index === 0 ? styles.linkPrimary : styles.linkSecondary}
-                href={link.href.startsWith('#') ? `/${link.href}` : link.href}
+                href={link.href.startsWith('#') ? `${import.meta.env.BASE_URL}${link.href}` : link.href}
               >
                 {link.label}
               </a>

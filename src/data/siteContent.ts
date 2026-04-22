@@ -1,5 +1,7 @@
 import type { SiteContent } from '../types/content'
 
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 export const siteContent: SiteContent = {
   hero: {
     eyebrow: 'Personal Blog / Frontend Developer',
@@ -7,7 +9,7 @@ export const siteContent: SiteContent = {
     subtitle: '这里是我的个人博客，也是我记录成长、技术和实习经历的地方。',
     intro:
       '目前就读于东华理工大学,27届正在持续深耕前端开发。我希望把学习、项目、实习和阶段性的思考，慢慢沉淀成真正属于自己的作品。',
-    avatarSrc: '/avatar.jpg',
+    avatarSrc: withBase('avatar.jpg'),
     links: [
       { label: '查看博客', href: '#thoughts-blog' },
       { label: '查看经历', href: '#internships' },
@@ -88,29 +90,29 @@ export const siteContent: SiteContent = {
     },
   ],
   skillTags: [
-    { label: 'React', icon: '/skill/react.png' },
-    { label: 'Vue', icon: '/skill/vue.png' },
-    { label: 'JavaScript', icon: '/skill/js.png' },
-    { label: 'TypeScript', icon: '/skill/ts.png' },
-    { label: 'HTML5', icon: '/skill/h5.png' },
-    { label: 'CSS3', icon: '/skill/css3.png' },
-    { label: 'Less', icon: '/skill/less.png' },
-    { label: 'Sass', icon: '/skill/sass.png' },
-    { label: 'Tailwind CSS', icon: '/skill/tailwind.png' },
-    { label: 'Vite', icon: '/skill/vite.png' },
-    { label: 'Webpack', icon: '/skill/webpack.png' },
-    { label: 'Rspack', icon: '/skill/rspack.png' },
-    { label: 'Pinia', icon: '/skill/pinia.png' },
-    { label: 'Zustand', icon: '/skill/zustand.png' },
-    { label: 'Git', icon: '/skill/git.png' },
-    { label: 'npm', icon: '/skill/npm.png' },
-    { label: 'pnpm', icon: '/skill/pnpm.png' },
-    { label: 'Garfish', icon: '/skill/garfish.png' },
-    { label: 'EdenX', icon: '/skill/EdenX.png' },
-    { label: 'Node.js', icon: '/skill/nodejs.png' },
-    { label: 'Express', icon: '/skill/express.png' },
-    { label: 'NestJS', icon: '/skill/nest.jpg' },
-    { label: 'PostgreSQL', icon: '/skill/postgre.png' },
+    { label: 'React', icon: withBase('skill/react.png') },
+    { label: 'Vue', icon: withBase('skill/vue.png') },
+    { label: 'JavaScript', icon: withBase('skill/js.png') },
+    { label: 'TypeScript', icon: withBase('skill/ts.png') },
+    { label: 'HTML5', icon: withBase('skill/h5.png') },
+    { label: 'CSS3', icon: withBase('skill/css3.png') },
+    { label: 'Less', icon: withBase('skill/less.png') },
+    { label: 'Sass', icon: withBase('skill/sass.png') },
+    { label: 'Tailwind CSS', icon: withBase('skill/tailwind.png') },
+    { label: 'Vite', icon: withBase('skill/vite.png') },
+    { label: 'Webpack', icon: withBase('skill/webpack.png') },
+    { label: 'Rspack', icon: withBase('skill/rspack.png') },
+    { label: 'Pinia', icon: withBase('skill/pinia.png') },
+    { label: 'Zustand', icon: withBase('skill/zustand.png') },
+    { label: 'Git', icon: withBase('skill/git.png') },
+    { label: 'npm', icon: withBase('skill/npm.png') },
+    { label: 'pnpm', icon: withBase('skill/pnpm.png') },
+    { label: 'Garfish', icon: withBase('skill/garfish.png') },
+    { label: 'EdenX', icon: withBase('skill/EdenX.png') },
+    { label: 'Node.js', icon: withBase('skill/nodejs.png') },
+    { label: 'Express', icon: withBase('skill/express.png') },
+    { label: 'NestJS', icon: withBase('skill/nest.jpg') },
+    { label: 'PostgreSQL', icon: withBase('skill/postgre.png') },
   ],
   projects: [
     {

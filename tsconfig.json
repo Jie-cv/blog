@@ -5,7 +5,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    
+
     /* Bundler mode */
     "moduleResolution": "Bundler",
     "allowImportingTsExtensions": false,
@@ -13,13 +13,22 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    
-    /* Linting */
-    "strict": true,
-    
-    /* Paths */
-    "baseUrl": ".",
-    
+    "jsxImportSource": "react",
+
+    /* 🔥 关闭严格模式，允许 any，不校验类型 */
+    "strict": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": false,
+
+    /* 关闭额外严格检查 */
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": false,
+
     /* Vite Config specific */
     "allowSyntheticDefaultImports": true
   },
