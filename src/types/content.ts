@@ -3,6 +3,17 @@ export type HeroLink = {
   href: string
 }
 
+export type ProfileFact = {
+  label: string
+  value: string
+}
+
+export type InternshipItem = {
+  company: string
+  team: string
+  summary: string
+}
+
 export type JourneyItem = {
   year: string
   title: string
@@ -37,13 +48,17 @@ export type SiteContent = {
     eyebrow: string
     title: string
     subtitle: string
+    intro: string
+    avatarSrc: string
     links: HeroLink[]
+    profileFacts: ProfileFact[]
     metrics: { label: string; value: string }[]
   }
   about: {
     title: string
     body: string
   }
+  internships: InternshipItem[]
   journey: JourneyItem[]
   skillTags: SkillTag[]
   projects: ProjectItem[]

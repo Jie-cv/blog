@@ -1,7 +1,7 @@
 .section {
   width: min(100% - 32px, var(--container-width));
   margin: 0 auto;
-  padding: 120px 0 0;
+  padding: 110px 0 0;
 }
 
 .columns {
@@ -19,6 +19,7 @@
 .columnTitle {
   margin: 0;
   font-size: 1.2rem;
+  color: #101828;
 }
 
 .cardList {
@@ -33,7 +34,7 @@
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 50px rgba(83, 166, 255, 0.16);
+  box-shadow: 0 22px 44px rgba(16, 24, 40, 0.08);
 }
 
 .tag {
@@ -46,6 +47,7 @@
 .cardTitle {
   margin: 12px 0 10px;
   font-size: 1.15rem;
+  color: #101828;
 }
 
 .cardSummary {

@@ -2,25 +2,50 @@ import type { SiteContent } from '../types/content'
 
 export const siteContent: SiteContent = {
   hero: {
-    eyebrow: 'Frontend / React / Growth Journey',
-    title: '从曲折里走出来的前端学习者',
-    subtitle:
-      '我不是一路顺利地走到这里，但每一次偏离，最后都让我更坚定地走向前端开发。',
+    eyebrow: 'Personal Blog / Frontend Developer',
+    title: '你好，我是赵捷。',
+    subtitle: '这里是我的个人博客，也是我记录成长、技术和实习经历的地方。',
+    intro:
+      '目前就读于东华理工大学，正在持续深耕前端开发。我希望把学习、项目、实习和阶段性的思考，慢慢沉淀成真正属于自己的作品。',
+    avatarSrc: '/avatar.jpg',
     links: [
-      { label: '查看成长历程', href: '#journey' },
-      { label: '查看博客与思考', href: '#thoughts-blog' },
+      { label: '查看博客', href: '#thoughts-blog' },
+      { label: '查看经历', href: '#internships' },
+    ],
+    profileFacts: [
+      { label: '生日', value: '2005.11.03' },
+      { label: '大学', value: '东华理工大学' },
+      { label: '邮箱', value: '3382865253@qq.com' },
+      { label: '方向', value: '前端开发' },
     ],
     metrics: [
-      { label: '当前阶段', value: '大三 / 前端方向' },
-      { label: '起点时间', value: '2025-02-11' },
-      { label: '目标', value: '持续成长，冲击更高平台' },
+      { label: '当前阶段', value: '大三学生' },
+      { label: '学习起点', value: '2025-02-11' },
+      { label: '博客定位', value: '成长 / 技术 / 实习记录' },
     ],
   },
   about: {
-    title: '现在的我',
+    title: '关于我',
     body:
-      '我是东华理工大学的一名大三学生。走到前端这条路并不算顺利，但也正因为经历过专业受阻、方向摇摆和现实压力，我才更确定自己真正想长期投入的事情是什么。',
+      '我不是一路顺利地走到前端这条路上的。也正因为经历过方向摇摆、专业受阻和现实压力，我更想把自己的路径认真记录下来。这个页面对我来说不只是展示页，也是一个长期更新的个人博客入口。',
   },
+  internships: [
+    {
+      company: '华顺信安',
+      team: '第一段实习',
+      summary: '这是我第一次真正进入职场的起点。我开始理解团队协作、业务目标和工程实践，也是在这里，我对前端路线第一次有了更坚定的认知。',
+    },
+    {
+      company: '字节跳动国际化广告与技术',
+      team: '第二段实习',
+      summary: '进入更复杂的业务和工程环境后，我开始从更高的要求重新理解前端能力边界，也对协作、质量和技术深度有了更强意识。',
+    },
+    {
+      company: 'TikTok Shop',
+      team: '第三段实习',
+      summary: '在更成熟的业务体系里继续积累，让我进一步理解产品、工程和落地之间的联系，也让我对未来的前端方向更明确。',
+    },
+  ],
   journey: [
     {
       year: '高中',
@@ -54,36 +79,10 @@ export const siteContent: SiteContent = {
         '中途因为比赛和其他安排短暂偏离，但我最后还是回到了前端学习中。这次回归让我更确定，自己不是一时兴起，而是真的想走这条路。',
     },
     {
-      year: '暑期',
-      title: '在现实挤压里继续前进',
+      year: '后续',
+      title: '从成长到沉淀',
       description:
-        '补修课程、当前专业课程、自学技术、找实习计划同时交织在一起。即使计划被打乱，我还是选择继续准备，继续投递。',
-    },
-    {
-      year: '第一段实习',
-      title: '走进华顺信安',
-      description:
-        '进入公司之后，我第一次真正理解团队协作、业务目标和工程实践，也第一次从真实工作环境里重新认识自己。',
-      highlight: true,
-    },
-    {
-      year: '实习之后',
-      title: '把“想进大厂”变成具体目标',
-      description:
-        '和 leader 的交流、真实的工作体验、以及身边案例，让我对前端路线越来越坚定。我开始把目标明确成字节，并决定继续深耕 React 和工程能力。',
-      highlight: true,
-    },
-    {
-      year: '回校后',
-      title: '不再被标签束缚',
-      description:
-        '有了第一段实习后，我开始相信双非和非科班并不是绝对限制。与其继续焦虑，不如把时间投入到技术成长和下一段机会里。',
-    },
-    {
-      year: '后续冲刺',
-      title: '接到字节面试电话',
-      description:
-        '从最初屡屡受挫，到后来终于迎来机会，这通电话让我知道，持续投入不会立刻兑现，但它一定会留下回响。',
+        '随着学习和实习不断推进，我开始把经历慢慢整理成自己的博客内容，也更希望用作品记录变化。',
       highlight: true,
     },
   ],
@@ -98,10 +97,10 @@ export const siteContent: SiteContent = {
   ],
   projects: [
     {
-      title: '成长叙事型个人主页',
-      summary: '一个强调成长路径、技术表达与持续输出的科技感个人主页。',
+      title: '个人博客首页',
+      summary: '一个融合自我介绍、技术栈、实习经历和成长记录的个人博客首页。',
       stack: ['React', 'TypeScript', 'GSAP'],
-      highlight: '用时间轴叙事替代传统简历堆砌。',
+      highlight: '用博客首页的方式承接个人表达与技术记录。',
     },
     {
       title: '前端学习沉淀区',
@@ -145,10 +144,10 @@ export const siteContent: SiteContent = {
     },
   ],
   footer: {
-    quote: '我走得不算顺，但我一直在向前。',
+    quote: '把成长变成记录，把记录继续变成作品。',
     contacts: [
-      { label: 'Email', href: 'mailto:hello@example.com' },
-      { label: 'GitHub', href: 'https://github.com/' },
+      { label: 'Email', href: 'mailto:3382865253@qq.com' },
+      { label: '联系我', href: 'mailto:3382865253@qq.com' },
     ],
   },
 }
