@@ -8,11 +8,11 @@ type SkillsSectionProps = {
   projects: SiteContent['projects']
 }
 
-function SkillTag({ tag, delay }: { tag: SiteContent['skillTags'][number]; delay: number }) {
-  const tagRef = useRevealUp<HTMLSpanElement>({ delay, y: 24 })
+function SkillTag({ tag, disableReveal }: { tag: SiteContent['skillTags'][number]; disableReveal?: boolean }) {
+  const tagRef = useRevealUp<HTMLSpanElement>({ delay: 0, y: 24 })
 
   return (
-    <span ref={tagRef} className={styles.tag}>
+    <span ref={disableReveal ? null : tagRef} className={disableReveal ? styles.marqueeTag : styles.tag}>
       {tag.icon && <img src={tag.icon} alt={tag.label} className={styles.tagIcon} />}
       {tag.label}
     </span>
@@ -53,6 +53,13 @@ function ProjectCard({ project, delay }: { project: SiteContent['projects'][numb
 
 export function SkillsSection({ tags, projects }: SkillsSectionProps) {
   const titleRef = useRevealUp<HTMLDivElement>({ y: 36 })
+  const marqueeRef = useRevealUp<HTMLDivElement>({ y: 36, delay: 0.1 })
+
+  const row1 = tags.filter((_, i) => i % 3 === 0)
+  const row2 = tags.filter((_, i) => i % 3 === 1)
+  const row3 = tags.filter((_, i) => i % 3 === 2)
+
+  const repeatTags = (arr: typeof tags, times: number) => Array(times).fill(arr).flat()
 
   return (
     <section className={styles.section}>
@@ -63,10 +70,25 @@ export function SkillsSection({ tags, projects }: SkillsSectionProps) {
           description="这些是我在前端学习和实习中积累的技术栈，也是我持续搭建作品的基础。"
         />
       </div>
-      <div className={styles.tags}>
-        {tags.map((tag, index) => (
-          <SkillTag key={tag.label} tag={tag} delay={index * 0.03} />
-        ))}
+      
+      <div className={styles.marqueeContainer}>
+        <div ref={marqueeRef} className={styles.marqueeContainerInner}>
+          <div className={`${styles.marqueeTrack} ${styles.track1}`}>
+            {repeatTags(row1, 6).map((tag, index) => (
+              <SkillTag key={`row1-${tag.label}-${index}`} tag={tag} disableReveal={true} />
+            ))}
+          </div>
+          <div className={`${styles.marqueeTrack} ${styles.track2}`}>
+            {repeatTags(row2, 6).map((tag, index) => (
+              <SkillTag key={`row2-${tag.label}-${index}`} tag={tag} disableReveal={true} />
+            ))}
+          </div>
+          <div className={`${styles.marqueeTrack} ${styles.track3}`}>
+            {repeatTags(row3, 6).map((tag, index) => (
+              <SkillTag key={`row3-${tag.label}-${index}`} tag={tag} disableReveal={true} />
+            ))}
+          </div>
+        </div>
       </div>
       
       <div className={styles.projectsGrid}>
