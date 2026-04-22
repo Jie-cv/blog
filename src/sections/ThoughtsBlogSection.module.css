@@ -1,7 +1,6 @@
 .section {
-  width: min(100% - 32px, var(--container-width));
-  margin: 0 auto;
-  padding: 110px 0 0;
+  width: 100%;
+  padding-top: 32px;
 }
 
 .columns {
@@ -27,14 +26,14 @@
   gap: 18px;
 }
 
-.card {
-  padding: 22px;
-  transition: transform 220ms ease, box-shadow 220ms ease;
+.cardLink {
+  text-decoration: none;
+  display: block;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 44px rgba(16, 24, 40, 0.08);
+.card {
+  padding: 22px;
+  cursor: pointer;
 }
 
 .tag {

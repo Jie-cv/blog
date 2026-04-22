@@ -1,12 +1,7 @@
+import { Routes, Route } from 'react-router-dom'
 import styles from './App.module.css'
-import { siteContent } from './data/siteContent'
-import { AboutSection } from './sections/AboutSection'
-import { FooterSection } from './sections/FooterSection'
-import { HeroSection } from './sections/HeroSection'
-import { InternshipsSection } from './sections/InternshipsSection'
-import { JourneySection } from './sections/JourneySection'
-import { SkillsSection } from './sections/SkillsSection'
-import { ThoughtsBlogSection } from './sections/ThoughtsBlogSection'
+import { HomePage } from './pages/HomePage'
+import { ArticlePage } from './pages/ArticlePage'
 
 function App() {
   return (
@@ -14,15 +9,10 @@ function App() {
       <div className={styles.noise} />
       <div className={styles.glowA} />
       <div className={styles.glowB} />
-      <main className={styles.main}>
-        <HeroSection hero={siteContent.hero} />
-        <AboutSection about={siteContent.about} />
-        <SkillsSection tags={siteContent.skillTags} projects={siteContent.projects} />
-        <InternshipsSection items={siteContent.internships} />
-        <JourneySection items={siteContent.journey} />
-        <ThoughtsBlogSection thinking={siteContent.thinking} blog={siteContent.blog} />
-        <FooterSection footer={siteContent.footer} />
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/article/:id" element={<ArticlePage />} />
+      </Routes>
     </div>
   )
 }

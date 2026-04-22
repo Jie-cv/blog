@@ -6,6 +6,8 @@ export type HeroLink = {
 export type ProfileFact = {
   label: string
   value: string
+  href?: string
+  icon?: string
 }
 
 export type InternshipItem = {
@@ -23,6 +25,7 @@ export type JourneyItem = {
 
 export type SkillTag = {
   label: string
+  icon?: string
 }
 
 export type ProjectItem = {
@@ -33,6 +36,7 @@ export type ProjectItem = {
 }
 
 export type ArticleCard = {
+  id?: string
   title: string
   summary: string
   tag: string
@@ -52,7 +56,7 @@ export type SiteContent = {
     avatarSrc: string
     links: HeroLink[]
     profileFacts: ProfileFact[]
-    metrics: { label: string; value: string }[]
+    metrics: { label: string; value: string; icon?: string }[]
   }
   about: {
     title: string

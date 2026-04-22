@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { GlowPanel } from '../components/GlowPanel'
 import { SectionTitle } from '../components/SectionTitle'
 import { useRevealUp } from '../hooks/useRevealUp'
@@ -23,11 +24,13 @@ function ContentColumn({ title, items, delayBase }: ContentColumnProps) {
       <h3 className={styles.columnTitle}>{title}</h3>
       <div className={styles.cardList}>
         {items.map((item) => (
-          <GlowPanel key={item.title} className={styles.card}>
-            <span className={styles.tag}>{item.tag}</span>
-            <h4 className={styles.cardTitle}>{item.title}</h4>
-            <p className={styles.cardSummary}>{item.summary}</p>
-          </GlowPanel>
+          <Link to={`/article/${item.id}`} key={item.id || item.title} className={styles.cardLink}>
+            <GlowPanel className={styles.card}>
+              <span className={styles.tag}>{item.tag}</span>
+              <h4 className={styles.cardTitle}>{item.title}</h4>
+              <p className={styles.cardSummary}>{item.summary}</p>
+            </GlowPanel>
+          </Link>
         ))}
       </div>
     </div>
